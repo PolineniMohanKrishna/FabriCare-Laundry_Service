@@ -8,6 +8,7 @@ public class FabriCareLaundryServicesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FabriCareLaundryServicesApplication.class, args);
+		System.out.println("Hello");
 	}
 
 }
