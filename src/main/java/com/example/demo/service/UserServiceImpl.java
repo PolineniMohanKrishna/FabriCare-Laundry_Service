@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entites.SignIn;
 import com.example.demo.entites.Users;
 import com.example.demo.repository.UserRepository;
 
@@ -40,6 +41,10 @@ public class UserServiceImpl implements UserService{
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		userRepository.deleteById(id);
+	}
+	
+	public Optional<Users>findByUsername(String username){
+		return userRepository.findByUserName(username);
 	}
 
 	

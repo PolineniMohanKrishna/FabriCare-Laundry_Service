@@ -15,5 +15,7 @@ public interface UserService {
 	public Optional<Users> getById( Long id);
 	public void deleteById(Long id);
 	
+	public Optional<Users>findByUsername(String username);
+	
 
 }
