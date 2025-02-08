@@ -2,6 +2,9 @@ package com.example.demo.entites;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,9 +38,11 @@ public class Users {
 	private long mobileNo;
 	
 	 @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, orphanRemoval = true)
+	 @JsonProperty(access = Access.READ_ONLY)
 	    private List<Address> addresses; // this
 	 
 	 @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, orphanRemoval = true)
+	 @JsonProperty(access = Access.READ_ONLY)
 	 private List<Orders> orders;
 
 
